@@ -203,6 +203,16 @@ namespace Project_2
             
         }
 
+        public int InputCount { get; set; }
+
+        public int HasRef { get; set; }
+
+        public Vertex(int n, int inpc)
+        {
+            this.N = n;
+            this.InputCount = inpc;
+        }
+
 
         public Vertex(int[] arr)
         {
@@ -247,7 +257,7 @@ namespace Project_2
 
         public override string ToString()
         {
-            return $"N = {(N==0?n:N.ToString())}, {GetTypes}, CH = {GetChildrenText()}\n";
+            return $" {(N==0?n:"N = "+N.ToString())}, {GetTypes} {(GetChildrenText().Length==0?"":" ,CH = ")+GetChildrenText()}\n";
         }
     }
 
